@@ -11,7 +11,5 @@ The goal of this assignment is to explore sequence-to-sequence learning using Re
 3. **Attention Mechanism**: Dive into attention-based models to see how they address the limitations of basic seq2seq architectures, especially for longer sequences.
 4. **Visualization**: Visualize how different components in the RNN-based model interact during training and inference, providing deeper insight into model behavior.
 
-This assignment provides hands-on experience with building, training, and analyzing neural models for tasks like transliteration, where input and output sequences differ in structure and length.
-
 ---
 
