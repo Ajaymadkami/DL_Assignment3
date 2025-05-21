@@ -19,8 +19,6 @@ The goal of this assignment is to explore sequence-to-sequence learning using Re
 2. **Cell Comparison**: Experiment with different RNN variants—vanilla RNN, LSTM, and GRU—and compare their performance.
 3. **Attention Mechanism**: Dive into attention-based models to see how they address the limitations of basic seq2seq architectures, especially for longer sequences.
 4. **Visualization**: Visualize how different components in the RNN-based model interact during training and inference, providing deeper insight into model behavior.
-
----
 ---
 **Encoder**
 The `Encoder` class is designed to encode an input sequence into a context representation that can be used by the decoder. It is initialized with the following parameters:
@@ -34,11 +32,6 @@ The `Encoder` class is designed to encode an input sequence into a context repre
 * **bidirectional**: Boolean flag indicating whether the encoder should process the sequence in both forward and backward directions.
 
 The `forward` method of the encoder processes the input sequence and outputs the final hidden state(s), which summarize the information in the entire input and are passed to the decoder for generating the output sequence.
-
-
----
-
-
 ---
 **Decoder**
 The `Decoder` class is responsible for generating the output sequence using the context information provided by the encoder. It is initialized with the following parameters:
@@ -51,17 +44,10 @@ The `Decoder` class is responsible for generating the output sequence using the 
 * **cell\_type**: Type of recurrent cell to use — RNN, LSTM, or GRU.
 
 The `forward` method of the decoder takes the encoder’s final hidden state(s) as the initial context and generates the output sequence one token at a time. It uses the hidden states and previously generated outputs to predict the next token in the sequence.
-
----
-
 ---
 **Seq2Seq Model**
 The `Seq2Seq` class integrates both the encoder and decoder to build the complete sequence-to-sequence architecture. It is initialized with an encoder and a decoder, enabling it to perform end-to-end sequence translation.
 
 The `forward` method accepts a source sequence and a target sequence as input. It first encodes the source sequence using the encoder and then uses the decoder to generate the predicted output sequence based on the encoded context and the target inputs.
-
----
----
-
 ---
 
