@@ -42,14 +42,16 @@ The `Decoder` class is responsible for generating the output sequence using the 
 * **num\_layers**: Number of stacked recurrent layers.
 * **dropout**: Dropout rate to help prevent overfitting.
 * **cell\_type**: Type of recurrent cell to use — RNN, LSTM, or GRU.
-
+  
 The `forward` method of the decoder takes the encoder’s final hidden state(s) as the initial context and generates the output sequence one token at a time. It uses the hidden states and previously generated outputs to predict the next token in the sequence.
----
+
+
 **Seq2Seq Model**
 ---
 The `Seq2Seq` class integrates both the encoder and decoder to build the complete sequence-to-sequence architecture. It is initialized with an encoder and a decoder, enabling it to perform end-to-end sequence translation.
 
 The `forward` method accepts a source sequence and a target sequence as input. It first encodes the source sequence using the encoder and then uses the decoder to generate the predicted output sequence based on the encoded context and the target inputs.
+
 ---
 **Performance**
 
