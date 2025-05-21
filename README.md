@@ -53,6 +53,28 @@ The `Seq2Seq` class integrates both the encoder and decoder to build the complet
 The `forward` method accepts a source sequence and a target sequence as input. It first encodes the source sequence using the encoder and then uses the decoder to generate the predicted output sequence based on the encoded context and the target inputs.
 
 ---
+
+** Hyperparameter Tuning**
+```
+sweep_config = {
+    'method': 'bayes',  # Random search
+    'metric': {
+        'name': 'accuracy',
+        'goal': 'maximize'  # Objective: Maximize accuracy
+    },
+    'parameters': {
+        'cell_type': {'values': ['RNN', 'GRU', 'LSTM']},
+        'n_enc_layers': {'values': [1, 2, 3]},
+        'n_dec_layers': {'values': [1, 2, 3]},
+        'hidden_layer_size': {'values': [16, 32, 64, 256]},
+        'emb_size': {'values': [16, 32, 64, 256]},
+        'bidirectional': {'values': [True, False]},
+        'dropout': {'values': [0.2, 0.3]},
+        'epochs': {'values': [4, 6]} 
+    }
+}
+
+```
 **Performance**
 
 * Using the best model from the sweep without attention—GRU cell, 3-layer encoder, 2-layer decoder, 256 hidden size, 16 embedding size, 0.3 dropout, and 6 epochs—we achieved strong performance. The model reached 32.3% training accuracy and 34.0% validation accuracy, with corresponding losses of 0.36.
