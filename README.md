@@ -51,4 +51,10 @@ The `Seq2Seq` class integrates both the encoder and decoder to build the complet
 
 The `forward` method accepts a source sequence and a target sequence as input. It first encodes the source sequence using the encoder and then uses the decoder to generate the predicted output sequence based on the encoded context and the target inputs.
 ---
+**Performance**
+
+* Using the best model from the sweep without attention—GRU cell, 3-layer encoder, 2-layer decoder, 256 hidden size, 16 embedding size, 0.3 dropout, and 6 epochs—we achieved strong performance. The model reached 32.3% training accuracy and 34.0% validation accuracy, with corresponding losses of 0.36.
+
+ 
+* Using attention with the best hyperparameters—LSTM cell, bidirectional encoder, 3 encoder layers, 2 decoder layers, 128 hidden and embedding size, 0.3 dropout, and 10 epochs—the model showed significant improvement. It achieved 47.68% training accuracy, 38.09% validation accuracy, and 37.9% test accuracy (exact word match). This demonstrates the effectiveness of attention in enhancing transliteration performance.
 
